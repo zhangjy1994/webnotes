@@ -22,7 +22,11 @@ module.exports = {
           ]
         }
       ]
-    }
+    },
+    // sidebarDepth: 2
+  },
+  markdown: {
+    lineNumbers: true
   },
   base: "/webnotes/"
 }
