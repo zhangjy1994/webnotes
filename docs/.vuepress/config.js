@@ -20,6 +20,39 @@ module.exports = {
             ['vue/page-a', 'a'],
             ['vue/page-b', 'b']
           ]
+        },
+        {
+          title: 'html',
+          collapsable: true,
+          children: [
+            ['html/1', '基础知识']
+          ]
+        },
+        {
+          title: 'css',
+          collapsable: true,
+          children: [
+            ['css/1', '基础知识']
+          ]
+        },
+        {
+          title: 'js',
+          collapsable: true,
+          children: [
+            ['js/1', '基础知识']
+          ]
+        },
+        {
+          title: 'interview',
+          collapsable: true,
+          children: [
+            ['interview/1', '面试题汇总']
+          ]
+        },
+        {
+          title: '杂记',
+          collapsable: true,
+          path: 'other/1'
         }
       ]
     },

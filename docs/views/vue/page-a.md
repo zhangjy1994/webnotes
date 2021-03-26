@@ -52,3 +52,6 @@ export default {
 :::
 
 [[toc]]
+
+<!-- ![An image](./oop.jpg) -->
+<img :src="$withBase('/img/oop.jpg')">
