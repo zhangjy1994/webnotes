@@ -1,4 +1,4 @@
-# home
+# MarkDown 语法Demo
 ***
 
 | Tables        | Are           | Cool  |
@@ -53,5 +53,7 @@ export default {
 
 [[toc]]
 
-<!-- ![An image](./oop.jpg) -->
-<img :src="$withBase('/img/oop.jpg')">
+
+<!-- ![An image](./imgs/oop.jpg) -->
+<!-- <img :src="$withBase('/imgs/oop.jpg')"> -->
+![图](@imgs/oop.jpg)
