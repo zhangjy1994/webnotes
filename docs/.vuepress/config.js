@@ -46,7 +46,8 @@ module.exports = {
         // path: '/views/css/',
         sidebarDepth: 1,
         children: [
-          ['/views/css/1', '基础知识']
+          ['/views/css/1', '基础知识'],
+          '/views/css/2'
         ]
       },
       {
@@ -78,7 +79,8 @@ module.exports = {
           '/views/interview/1',
           '/views/interview/2',
           '/views/interview/3',
-          '/views/interview/4'
+          '/views/interview/4',
+          '/views/interview/5'
         ]
       },
       {
