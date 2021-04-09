@@ -47,7 +47,8 @@ module.exports = {
         sidebarDepth: 1,
         children: [
           ['/views/css/1', '基础知识'],
-          '/views/css/2'
+          '/views/css/2',
+          '/views/css/3'
         ]
       },
       {
@@ -67,7 +68,8 @@ module.exports = {
         sidebarDepth: 1,
         children: [
           ['/views/vue/1', '知识点'],
-          ['/views/vue/2', 'vue性能优化']
+          ['/views/vue/2', 'vue性能优化'],
+          '/views/vue/3'
         ]
       },
       {
@@ -80,7 +82,8 @@ module.exports = {
           '/views/interview/2',
           '/views/interview/3',
           '/views/interview/4',
-          '/views/interview/5'
+          '/views/interview/5',
+          '/views/interview/demo'
         ]
       },
       {
