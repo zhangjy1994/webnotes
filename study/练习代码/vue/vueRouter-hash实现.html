@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <!-- hash模式 # -->
+  <ul>
+    <li class="item">
+      <a href="#index">跳转到A页面</a>
+    </li>
+    <li class="item">
+      <a href="#book">跳转到B页面</a>
+    </li>
+    <li class="item">
+      <a href="#cors">跳转到C页面</a>
+    </li>
+  </ul>
+  <div id="app">
+
+  </div>
+  <script>
+  //  window.onhashchange = function (e) {
+  //    console.log(e);
+  //    console.log(location);
+  //    const app = document.getElementById('app')
+  //    switch(location.hash) {
+  //       case '#index':
+  //         app.innerText = '我是A页面';
+  //       break
+  //       case '#book':
+  //         app.innerText = '我是B页面'
+  //         break
+  //       case '#cors':
+  //         app.innerText = '我是C页面'
+  //         break
+  //       default:
+  //         break
+  //    }
+  //  }
+
+
+  class Router {
+    constructor() {
+      this.routers = []
+    }
+    add(route, callback) {
+      this.routers.push({
+        path: route,
+        render: callback
+      })
+    }
+    listen(callback) {
+      console.log(this);
+      window.onhashchange = this.hashchange(callback)
+      // 首次进入页面的时候没有出发hashchange，必须就要单独调用一下
+      this.hashchange(callback)()
+    }
+    hashchange(callback) {
+      let self = this
+      return function () {
+        let hash = location.hash
+        for(let i = 0;i < self.routers.length;i++) {
+          let route = self.routers[i]
+          if(hash === route.path) {
+            callback(route.render())
+            return
+          }
+        }
+      }
+    }
+  }
+  let router = new Router()
+  
+  router.add('#index',() => {
+    return 'router封装后的index组件'
+  })
+  router.add('#cors', () => {
+    return 'router封装后的cors组件'
+  })
+  router.add('#book', () => {
+    return 'router封装后的book组件'
+  })
+  router.listen((innerHtml) => {
+    console.log('innerHtml', innerHtml);
+    
+    const app = document.getElementById('app')
+    app.innerText = innerHtml
+  })
+  </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html,
+    body {
+      height: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+    .box {
+      box-sizing: border-box;
+      width: 100px;
+      height: 50px;
+      line-height: 48px;
+      text-align: center;
+      font-size: 16px;
+      border: 1px solid lightblue;
+      background: lightcyan;
+    }
+    /* 定位 */
+    /* body {
+      position: relative;
+    } */
+    /* .box {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -25px;
+      margin-left: -50px;
+    } */
+    /* .box {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+    } */
+    /* .box {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    } */
+    /* display:flex */
+    /* body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    } */
+    /* display:table-cell */
+    body {
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+      /* 固定宽高 */
+      width: 500px;
+      height: 500px;
+    }
+    .box {
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <div class="box" id="box">
+    水平垂直居中
+  </div>
+  <script>
+    // let HTML = document.documentElement,
+    //     windW = HTML.clientWidth,
+    //     windH = HTML.clientHeight,
+    //     boxW = box.offsetWidth,
+    //     boxH = box.offsetHeight;
+    // box.style.position = 'absolute';
+    // box.style.left = (windW - boxW) / 2 + 'px';
+    // box.style.top = (windH - boxH) / 2 + 'px';
+  </script>
+</body>
+</html>

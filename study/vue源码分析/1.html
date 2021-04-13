@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./vue2.6.12.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <check-list />
+  </div>
+  <script>
+    /* 
+    请实现一个Vue组件，完成全选列表的功能，列表ui示例：
+    口 全选
+    口 苹果
+    口 香蕉
+    口 梨
+    具体需求：
+      * 每个复选框都可以单独操作
+      * 选中全选框，会自动勾选全部列表项
+      * 此时取消某一项（比如梨）的勾选，会自动取消全选的勾选
+      * 再将梨选中，会自动选中全选
+      * 取消全选框勾选，会自动取消所有列表项的勾选
+     */
+    const CheckList = {
+      // 方法1：template 模式
+      // template: `
+      //   <ul>
+      //     <li @click="toggleAll(chooseAll)">{{chooseAll ? '取消全选' : '全选'}}</li>
+      //     <li v-for="(item,index) in list" :key ="item.name" @click="check(index)">{{item.checked}} {{item.name}}</li>
+      //   </ul>
+      // `,
+      // 方法2：render 模式
+      render(h) {
+        return h('ul', {}, [
+          h('li', {
+            on: {
+              click: () => {
+                this.toggleAll(this.chooseAll)
+              }
+            }
+          },
+            [this.chooseAll ? '取消全选' : '全选']
+          ),
+          this.list.map((item, index) => {
+            return h('li', {
+              on: {
+                click: () => {
+                  this.check(index)
+                }
+              }
+            }, [item.name, (item.checked).toString()])
+          })
+        ])
+      },
+      data() {
+        return {
+          list: [{
+            name: '苹果',
+            checked: false
+          }, {
+            name: '香蕉',
+            checked: false
+          }, {
+            name: '梨',
+            checked: false
+          }]
+        }
+      },
+      computed: {
+        chooseAll() {
+          return this.list.every(item => {
+            return item.checked
+          })
+        }
+      },
+      methods: {
+        toggleAll(checked) {
+          this.list = this.list.map(item => {
+            item.checked = !checked
+            return item
+          })
+        },
+        check(index) {
+          // const name = this.list[index].name
+          // const checked = this.list[index].checked
+          // this.list = this.list.map((item, i) => {
+          //   if (index === i) {
+          //     item.checked = !checked
+          //   }
+          //   return item
+          // })
+          this.list[index].checked = !this.list[index].checked
+        }
+      }
+    }
+    new Vue({
+      el: '#app',
+      components: {
+        CheckList
+      }
+    })
+  </script>
+</body>
+
+</html>

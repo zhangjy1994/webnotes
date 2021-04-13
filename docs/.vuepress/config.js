@@ -32,7 +32,7 @@ module.exports = {
       //   path: '/views/'
       // },
       {
-        title: 'html',
+        title: 'Html',
         collapsable: true,
         path: '/views/html/',
         sidebarDepth: 1,
@@ -41,7 +41,7 @@ module.exports = {
         ]
       },
       {
-        title: 'css',
+        title: 'Css',
         collapsable: true,
         // path: '/views/css/',
         sidebarDepth: 1,
@@ -52,7 +52,7 @@ module.exports = {
         ]
       },
       {
-        title: 'js',
+        title: 'Js',
         collapsable: true,
         // path: '/views/js/',
         sidebarDepth: 1,
@@ -62,18 +62,29 @@ module.exports = {
         ]
       },
       {
-        title: 'vue',
+        title: 'Vue',
         collapsable: true,
         // path: '/views/vue/',
         sidebarDepth: 1,
         children: [
           ['/views/vue/1', '知识点'],
           ['/views/vue/2', 'vue性能优化'],
-          '/views/vue/3'
+          '/views/vue/3',
+          '/views/vue/4'
         ]
       },
       {
-        title: 'interview',
+        title: 'Webpack',
+        collapsable: true,
+        // path: '/views/webpack/',
+        sidebarDepth: 1,
+        children: [
+          '/views/vue/1',
+          '/views/vue/2'
+        ]
+      },
+      {
+        title: 'Interview',
         collapsable: true,
         // path: '/views/interview/',
         sidebarDepth: 1,
@@ -83,6 +94,9 @@ module.exports = {
           '/views/interview/3',
           '/views/interview/4',
           '/views/interview/5',
+          '/views/interview/6',
+          '/views/interview/7',
+          '/views/interview/8',
           '/views/interview/demo'
         ]
       },
