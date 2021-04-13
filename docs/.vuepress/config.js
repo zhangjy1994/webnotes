@@ -101,6 +101,15 @@ module.exports = {
         ]
       },
       {
+        title: '小程序',
+        collapsable: true,
+        // path: '/views/miniProgram/',
+        sidebarDepth: 0,
+        children: [
+          '/views/miniProgram/1'
+        ]
+      },
+      {
         title: '杂记',
         collapsable: true,
         // path: '/views/other/',
