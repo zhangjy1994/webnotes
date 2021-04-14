@@ -74,13 +74,24 @@ module.exports = {
         ]
       },
       {
+        title: 'Http',
+        collapsable: true,
+        // path: '/views/http/',
+        sidebarDepth: 1,
+        children: [
+          '/views/http/1',
+          '/views/http/2',
+          '/views/http/3',
+        ]
+      },
+      {
         title: 'Webpack',
         collapsable: true,
         // path: '/views/webpack/',
         sidebarDepth: 1,
         children: [
-          '/views/vue/1',
-          '/views/vue/2'
+          '/views/webpack/1',
+          '/views/webpack/2'
         ]
       },
       {
