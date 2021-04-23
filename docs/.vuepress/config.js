@@ -129,7 +129,8 @@ module.exports = {
         sidebarDepth: 0,
         children: [
           '/views/other/1',
-          '/views/other/2'
+          '/views/other/2',
+          '/views/other/3'
         ]
       }
     ],
