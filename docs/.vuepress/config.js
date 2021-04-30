@@ -119,7 +119,19 @@ module.exports = {
         // path: '/views/miniProgram/',
         sidebarDepth: 0,
         children: [
-          '/views/miniProgram/1'
+          '/views/miniProgram/1',
+          '/views/miniProgram/2',
+          '/views/miniProgram/3'
+        ]
+      },
+      {
+        title: '工具',
+        collapsable: true,
+        // path: '/views/tool/',
+        sidebarDepth: 0,
+        children: [
+          '/views/tool/1',
+          '/views/tool/2'
         ]
       },
       {
