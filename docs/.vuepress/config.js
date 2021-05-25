@@ -59,7 +59,8 @@ module.exports = {
         children: [
           ['/views/js/1', '基础知识'],
           ['/views/js/2', '数据结构'],
-          '/views/js/3'
+          '/views/js/3',
+          '/views/js/4'
         ]
       },
       {
@@ -84,6 +85,7 @@ module.exports = {
           '/views/http/1',
           '/views/http/2',
           '/views/http/3',
+          '/views/http/4'
         ]
       },
       {
@@ -142,7 +144,8 @@ module.exports = {
         children: [
           '/views/other/1',
           '/views/other/2',
-          '/views/other/3'
+          '/views/other/3',
+          '/views/other/4'
         ]
       }
     ],

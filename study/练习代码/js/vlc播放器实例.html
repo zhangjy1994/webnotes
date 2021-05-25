@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+  $('.video-outer>object>param[name="mrl"]').val(data_url)
+  
+  $('.modal-outer2').on('hidden.bs.modal', function () {
+    $('.video-outer>object').show();
+    try {
+      var vlc = document.getElementById("vlc");
+      var id = vlc.playlist.add($('.video-outer>object>param[name="mrl"]').val());
+      vlc.playlist.playItem(id);
+      vlc.video.aspectRadio = '16:9'
+    } catch (e) {
+    }
+  })
+
+  function playVlc(data) {
+    if(!data){
+      var data = $(this).attr('data-id');
+    }
+    // $(`[data-id=${data}]`).addClass('play').siblings().removeClass('play');
+    $('[data-id='+data+']').addClass('play').siblings().removeClass('play');
+    $('.monitoring_vlc object').each(function (i) {
+      // console.log(rtspObj[data][i]);
+      if(rtspObj[data][i]){
+        $(this).css('display','inline-block');
+        $(this).siblings('.vlc_loading').hide();
+        var vlc = this;
+        try {
+          var vlcid = vlc.playlist.add(rtspObj[data][i]);
+          vlc.playlist.playItem(vlcid);
+        } catch(e) {
+          //TODO handle the exception
+        }
+      }else{
+        $(this).hide();
+        $(this).siblings('.vlc_loading').show();
+      }
+    })
+  }
+  </script>
+</body>
+</html>
